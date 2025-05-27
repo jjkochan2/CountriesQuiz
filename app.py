@@ -16,8 +16,6 @@ with open('countries.json', 'r') as f:
 if enable_country_range:
     countries = {k: countries[k] for k in list(countries.keys())[country_range[0]:country_range[1]]}
 
-print(len(countries))
-
 country_codes = list(countries.keys())
 flag_folder = 'Images'
 
