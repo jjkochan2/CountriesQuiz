@@ -5,7 +5,7 @@ import json
 import os
 
 # SETTINGS
-enable_country_range = True
+enable_country_range = False
 country_range = [0, 10]
 
 # Load country data
@@ -65,7 +65,8 @@ class FlagQuiz:
         image_path = os.path.join(flag_folder, f"{self.correct_code.lower()}.png")
         try:
             img = Image.open(image_path)
-            max_width, max_height = 1920 // 2, 1080 // 2
+            max_width, max_height = 1920 // 2, 1080 // 2.2
+            
             original_width, original_height = img.size
 
             scale = min(max_width / original_width, max_height / original_height)
