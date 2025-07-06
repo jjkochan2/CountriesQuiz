@@ -6,17 +6,17 @@ import os
 
 # SETTINGS
 enable_country_range = True
-country_range = [0, 1]
+country_range = [100, 110]
 
 # Load country data
 with open('countries.json', 'r', encoding='utf-8') as f:
     countries = json.load(f)
 
+countries_list = list(countries.values())
+
 # set total countries to be practiced
 if enable_country_range:
     countries = {k: countries[k] for k in list(countries.keys())[country_range[0]:country_range[1]]}
-
-countries_list = list(countries.values())
 
 flag_folder = 'Images'
 font = "Consolas"
