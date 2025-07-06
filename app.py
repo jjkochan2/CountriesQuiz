@@ -5,15 +5,18 @@ import json
 import os
 
 # SETTINGS
-enable_country_range = False
-country_range = [0, 10]
+enable_country_range = True
+country_range = [0, 1]
 
 # Load country data
 with open('countries.json', 'r', encoding='utf-8') as f:
     countries = json.load(f)
 
+# set total countries to be practiced
 if enable_country_range:
     countries = {k: countries[k] for k in list(countries.keys())[country_range[0]:country_range[1]]}
+
+countries_list = list(countries.values())
 
 flag_folder = 'Images'
 font = "Consolas"
@@ -31,6 +34,9 @@ class FlagQuiz:
 
         self.flag_label = tk.Label(root)
         self.flag_label.pack(pady=20)
+        
+        self.index_label = tk.Label(root, text="", font=(font, 12))
+        self.index_label.pack(pady=5)
 
         self.entry = tk.Entry(root, font=(font, 14), width=40)
         self.entry.pack(pady=5)
@@ -56,11 +62,16 @@ class FlagQuiz:
             self.flag_label.config(image='', text="🎉 Quiz complete!")
             self.entry.config(state='disabled')
             self.submit_btn.config(state='disabled')
+            self.index_label.config(text='')
             return
 
         self.correct_code = random.choice(self.remaining_codes)
-        self.remaining_codes.remove(self.correct_code)
+        
         self.correct_name = countries[self.correct_code]
+
+        self.index = countries_list.index(self.correct_name)
+        print(self.index)
+        self.index_label.config(text=self.index)
 
         image_path = os.path.join(flag_folder, f"{self.correct_code.lower()}.png")
         try:
@@ -93,6 +104,7 @@ class FlagQuiz:
             self.feedback_label.config(text="✅ Correct!", fg="green")
             self.total_questions += 1
             self.status_label.config(text=f"Score: {self.score}/{self.total_questions}")
+            self.remaining_codes.remove(self.correct_code)
             self.next_question()  # Instantly go to next question
         else:
             self.feedback_label.config(text=f"❌ Incorrect. It was {self.correct_name}.", fg="red")
