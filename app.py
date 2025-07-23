@@ -20,11 +20,12 @@ if enable_country_range:
 
 flag_folder = 'Images'
 font = "Consolas"
+window_title = "Flag Quiz"
 
 class FlagQuiz:
     def __init__(self, root):
         self.root = root
-        self.root.title("Flag Quiz")
+        self.root.title(window_title)
 
         self.score = 0
         self.total_questions = 0
