@@ -64,7 +64,7 @@ class FlagQuiz:
 
     def next_question(self):
         if not self.remaining_codes:
-            self.flag_label.config(image="", text="🎉 Quiz complete!")
+            self.flag_label.config(image="", text="Quiz complete!")
             self.entry.config(state="disabled")
             self.submit_btn.config(state="disabled")
             self.index_label.config(text="")
