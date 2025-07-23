@@ -3,11 +3,26 @@
     {
         "FR": "France",
         "GF": "French Guiana",
-        "GP": "Guadeloupe"
+        "GP": "Guadeloupe",
+        "MF": "Saint Martin",
+        "MQ": "Martinique",
+        "PM": "Saint Pierre and Miquelon",
+        "RE": "Réunion",
+        "YT": "Mayotte"
     },
     "2":
     {
         "GB": "United Kingdom",
         "GB-NIR": "Northern Ireland"
+    },
+    "3":
+    {
+        "BQ": "Caribbean Netherlands",
+        "NL": "Netherlands"
+    },
+    "4":
+    {
+        "BV": "Bouvet Island",
+        "NO": "Norway"
     }
 }
