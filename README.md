@@ -10,6 +10,8 @@ Learn the flags of the world
 - Navigate to the folder called 'CountriesQuiz-main' which is inside of another folder called CountriesQuiz-main'
 - Click 'Select Folder'
 - In VS Code Navigate to 'Terminal -> New Terminal' near the upper left corner of the window
+- type `python --version` into your terminal
+- If it didn't print out 'Python' and then list a version number, you have to install python
 - If you don't have python installed, go to https://www.python.org/downloads/ and click the big yellow button that says 'Download Python 3.XX.X' and then run the .exe
 - Make sure to click add to PATH if it's an option during installation
 - If you already have pytyon installed, type `pip install -r requirements.txt` into your terminal
