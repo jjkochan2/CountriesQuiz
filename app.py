@@ -6,7 +6,7 @@ import os
 
 # SETTINGS
 enable_country_range = True
-country_range = [100, 110]
+country_range = [0, 255]
 
 # Load country data
 with open("countries.json", "r", encoding="utf-8") as f:
