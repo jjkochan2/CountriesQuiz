@@ -75,7 +75,6 @@ class FlagQuiz:
         self.correct_name = countries[self.correct_code]
 
         self.index = countries_list.index(self.correct_name)
-        print(self.index)
         self.index_label.config(text=self.index)
 
         image_path = os.path.join(flag_folder, f"{self.correct_code.lower()}.png")
